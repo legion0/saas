@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby -wKU
+
+task :default => :run
+
+task :run do
+	require './tester'
+end
