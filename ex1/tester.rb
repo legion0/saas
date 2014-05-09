@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require "./ex1"
+require "./ex1_1"
+require "./ex1_2"
 
 $_errors = []
 
@@ -20,6 +21,14 @@ def _tester()
 	_verify( sum_to_n?([0, 0, 0, 0], 1) == false, "sum_to_n? failed test 3" )
 	_verify( sum_to_n?([0, 0], 0) == true, "sum_to_n? failed test 4" )
 	_verify( sum_to_n?([-6, -9, -4], -10) == true, "sum_to_n? failed test 5" )
+
+	_verify( binary_multiple_of_4?("100") == true, "100 is a multiple of 4" )
+	_verify( binary_multiple_of_4?("0") == true, "A")
+	_verify( binary_multiple_of_4?("1100") == true, "B")
+
+	_verify( binary_multiple_of_4?("110") == false, "C")
+	_verify( binary_multiple_of_4?("AAA") == false, "D")
+	_verify( binary_multiple_of_4?("100A") == false, "E")
 
 	if $_errors.length > 0
 		$stderr.puts "Errors:", $_errors
